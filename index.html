@@ -1,145 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<1-w3c DTD ->
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tanishk's Poster Gallery</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #1a1a1a;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-    }
-
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      color: #ff2b2b;
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .poster {
-      background-color: #2a2a2a;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
-      max-width: 300px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .poster:hover {
-      transform: scale(1.05);
-    }
-
-    .poster img {
-      width: 100%;
-      border-radius: 6px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #888;
-    }
-
-    /* Fullscreen Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.95);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .modal img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: #ff2b2b;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 10000;
-    }
-
-    .close:hover {
-      color: #fff;
-    }
-  </style>
-</head>
-<body>
-
+<title>Practice Pages</title>
 <header>
-  <h1>#Tanishk Graphics</h1>
-  <p>Work Smart Not Hard</p>
+<div id="col1">My Practice Work</div>
 </header>
-
-<div class="gallery">
-  <div class="poster"><img src="Images/klmkl.png" alt="Poster 1" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/vsdsdv.png" alt="Poster 2" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/harsh sir.png" alt="Poster 3" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/abid sir.png" alt="Poster 4" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/aa6ab89b-5505-4297-8f04-528de53e379f.png" alt="Poster 5" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/acscsa.png" alt="Poster 6" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/WhatsApp Image 2025-06-19 at 12.36.01_51b2c36a.jpg" alt="Poster 7" onclick="openModal(this.src)"></div>
-  <div class="poster"><img src="Images/4c883e90-46e9-429e-88f3-0ddc8dd5a8a5.png" alt="Poster 8" onclick="openModal(this.src)"></div>
+</head>
+<style>
+header
+{
+background:black;
+width:70%;
+margin:auto;
+box-shadow:10px 10px 10px gray;
+color:white;
+font-size:50px;
+text-align:center;
+padding:10px;
+box-sizing:border-box;
+}
+#col1{
+}
+</style>
+<body>
+<div>
+<h2>Menu</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="photogallery.html">Photo Gallery</a></li>
+<li>Form in HTML</li>
+<li>Table </li>
+<li>I-Frame</li>
+</ul>
 </div>
-
-<!-- Fullscreen Modal -->
-<div id="myModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">×</span>
-  <div class="modal-content">
-    <img id="modalImage" src="">
-  </div>
-</div>
-
-<footer>
-  &copy; 2025 Tanishk Graphics. All rights reserved.
-</footer>
-
-<script>
-  function openModal(src) {
-    document.getElementById("modalImage").src = src;
-    document.getElementById("myModal").style.display = "flex";
-  }
-
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
-</script>
-
 </body>
 </html>
