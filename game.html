@@ -1,35 +1,87 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Practice Pages</title>
-<header>
-<div id="col1">My Practice Work</div>
-</header>
+  <meta charset="UTF-8">
+  <title>My Practice Work</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      padding: 15px 25px;
+      background: #3a3a5f;
+      color: white;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .menu a:hover {
+      background-color: #5b5b8f;
+      cursor: pointer;
+      padding-left: 35px;
+    }
+
+    .menu a::before {
+      content: "➤";
+      position: absolute;
+      left: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .menu a:hover::before {
+      opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+      .menu a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
 </head>
-<style>
-header
-{
-background:black;
-width:70%;
-margin:auto;
-box-shadow:10px 10px 10px gray;
-color:white;
-font-size:50px;
-text-align:center;
-padding:10px;
-box-sizing:border-box;
-}
-#col1{
-}
-</style>
 <body>
-<div>
-<h2>Menu</h2>
-<ul>
-<li><a href="pfp.html">Home</a></li>
-<li><a href="post.html">Photo Gallery</a></li>
-<li><a href="index.html">Back to My Page</a></li>
-</ul>
-</div>
+  <header>My Practice Work</header>
+
+  <div class="menu">
+    <a href="pfp.html">🏠 Home</a>
+    <a href="post.html">🖼️ Photo Gallery</a>
+    <a href="index.html">🔙 Back to My Page</a>
+    <a href="table.html">🧾 Table Portfolio</a>
+  </div>
 </body>
 </html>
