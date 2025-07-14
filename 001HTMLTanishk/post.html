@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanishk's Poster Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ff2b2b;
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 5px;
+      color: #ccc;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .poster {
+      background-color: #2a2a2a;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .poster:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .poster img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #888;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 10px;
+      animation: zoomIn 0.4s ease-in-out;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .close:hover {
+      color: #ff2b2b;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>#Tanishk Graphics</h1>
+  <p>Work Smart Not Hard</p>
+  <p><a href="index.html" style="color: #ff2b2b;">&larr; Back to Main</a></p>
+  <p><a href="game.html" style="color: #ff2b2b;">&larr; Home</a></p>
+</header>
+
+<div class="gallery">
+  <!-- Each image opens the lightbox with a larger version -->
+  <div class="poster">
+    <img src="Images/klmkl.png" alt="Poster 1" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/vsdsdv.png" alt="Poster 2" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/harsh sir.png" alt="Poster 3" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/abid sir.png" alt="Poster 4" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/aa6ab89b-5505-4297-8f04-528de53e379f.png" alt="Poster 5" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/acscsa.png" alt="Poster 6" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/WhatsApp Image 2025-06-19 at 12.36.01_51b2c36a.jpg" alt="Poster 7" onclick="openLightbox(this.src)">
+  </div>
+  <div class="poster">
+    <img src="Images/4c883e90-46e9-429e-88f3-0ddc8dd5a8a5.png" alt="Poster 8" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<!-- Lightbox Container -->
+<div class="lightbox" id="lightbox">
+  <a href="#" class="close" onclick="closeLightbox()">&times;</a>
+  <img id="lightbox-img" src="">
+</div>
+
+<footer>
+  &copy; 2025 Tanishk Graphics. All rights reserved.
+</footer>
+
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  // Close lightbox on background click
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+
+</body>
+</html>
