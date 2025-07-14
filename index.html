@@ -13,6 +13,41 @@
       text-align: center;
     }
 
+    /* Banner Styles */
+    .banner-slider {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: inset 0 -1px 0 #ccc;
+    }
+
+    .banner-track {
+      display: inline-block;
+      animation: scrollLeft 40s linear infinite;
+    }
+
+    .banner-track img {
+      width: 300px;
+      height: auto;
+      margin: 0 15px;
+      border-radius: 10px;
+      vertical-align: middle;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .banner-track img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
     header {
       background-color: #222;
       color: #fff;
@@ -65,14 +100,70 @@
       width: 100%;
       bottom: 0;
     }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
 
+<!-- 🔼 Top Banner Starts -->
+<div class="banner-slider">
+  <div class="banner-track">
+    <img src="D:/001HTMLTanishk/Images/post1.jpg" alt="Avengers" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/adssad.png" alt="Wolverine" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/bat.png" alt="Batman" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/post 3.jpg" alt="Black Panther" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/post 4.png" alt="Iron Man" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/5d12726c8f4df54c081612c24c29aaf6.jpg" alt="Spider-Man" onclick="openLightbox(this.src)">
+    <!-- Duplicate Images for Smooth Infinite Scroll -->
+    <img src="D:/001HTMLTanishk/Images/post1.jpg" alt="Avengers" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/adssad.png" alt="Wolverine" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/bat.png" alt="Batman" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/post 3.jpg" alt="Black Panther" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/post 4.png" alt="Iron Man" onclick="openLightbox(this.src)">
+    <img src="D:/001HTMLTanishk/Images/5d12726c8f4df54c081612c24c29aaf6.jpg" alt="Spider-Man" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<!-- 🔍 Lightbox Overlay -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="Preview Image">
+</div>
+
 <header>
   <h1>Practice Work</h1>
   <p>Explore My Projects</p>
-  <!-- PROFILE PICTURE -->
   <img src="images/don.png" alt="Tanishk Verma PFP" class="pfp">
 </header>
 
@@ -87,9 +178,17 @@
   <p>Click above to explore my graphic and photo works.</p>
 </section>
 
-<footer>
-  &copy; 2025 Tanishk Verma. All Rights Reserved.
-</footer>
+<!-- JavaScript for Lightbox -->
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
 
 </body>
 </html>
